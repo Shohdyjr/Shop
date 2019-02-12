@@ -12,22 +12,7 @@
             <div class="row">
 
                 <!-- section title -->
-                <div class="col-md-12">
-                    <div class="section-title">
-                        <h3 class="title">Products</h3>
-                        <div class="section-nav">
-                            <ul class="section-tab-nav tab-nav">
-                                <li class="active"><a data-toggle="tab" href="#tab1">Categories</a></li>
-                                @if(count($cats)>0)
-                                    @foreach($cats as $cat)
-                                        <li><a href="#">{{$cat->name}}</a></li>
 
-                                    @endforeach
-                                @endif
-                            </ul>
-                        </div>
-                    </div>
-                </div>
                 <!-- /section title -->
 
                 <!-- Products tab & slick -->
@@ -50,7 +35,7 @@
                                         <div class="product-body">
 
 
-                                            <p class="product-category">{{$product -> cat_id}}</p>
+                                            <p class="product-category">{{$product -> category -> name}}</p>
                                             <h3 class="product-name"><a href="{{url('product'.'/'.$product->id)}}">{{$product->name}}</a></h3>
                                             <h4 class="product-price">{{$product->name}} </h4>
                                             <div class="product-btns">

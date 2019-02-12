@@ -43,7 +43,7 @@
                                         @foreach( $products as $product)
                                             <div class="product">
                                                 <div class="product-img">
-                                                    <img src="{{url('storage/images/' . $product->image)}}" alt="">
+                                                    <img src="{{url('images/' . $product->image)}}" alt="">
                                                     <div class="product-label">
                                                     </div>
                                                 </div>
@@ -51,7 +51,7 @@
                                                 <div class="product-body">
 
 
-                                                    <p class="product-category">{{$product->cat_id}}</p>
+                                                    <p class="product-category">{{$product->category->name}}</p>
                                                     <h3 class="product-name"><a href="{{url('product'.'/'.$product->id)}}">{{$product->name}}</a></h3>
                                                     <h4 class="product-price">{{$product->name}} </h4>
                                                     <div class="product-btns">
