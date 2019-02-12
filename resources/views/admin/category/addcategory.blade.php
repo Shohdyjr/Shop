@@ -18,7 +18,16 @@
                 <div class="form-group">
                     @csrf
                     <label for=""></label>
-                    <input type="text" class="form-control" name="name" placeholder="Enter Name">
+                    <input type="text" class="form-control" name="cat" placeholder="Enter category">
+                    <hr>
+                    <select class="form-control" name="parent">
+                        @if($cats->count() > 0)
+                            <option value="">Main Category</option>
+                            @foreach($cats as $cat)
+                                <option value="{{$cat->id}}">{{$cat->name}}</option>
+                            @endforeach
+                        @endif
+                    </select>
                     <hr>
                 </div>
 

@@ -12,4 +12,11 @@ class Category extends Model
         return $this->hasMany('App\Product');
 
     }
+
+
+    public function childs(){
+
+        return $this->hasMany('App\Category','parent');
+
+    }
 }

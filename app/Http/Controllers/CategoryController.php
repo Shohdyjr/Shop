@@ -35,11 +35,20 @@ class CategoryController extends Controller
 
         $this->validate($request ,[
 
-            'name'=>'required'
+            'cat'=>'required'
         ]);
 
+        /*if($request->input('cat') == null){
+            $parent = null;
+        } else { X
+
+            $parent =
+        }*/
+
+
         $c = new Category();
-        $c->name = $request->input('name');
+        $c->name = $request->input('cat');
+        $c->parent = $request->input('parent');
         $c->save();
         return redirect(aurl('addcategory'))->with('msg','Category Added');
     }
